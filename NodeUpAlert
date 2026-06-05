@@ -1,0 +1,53 @@
+{
+  "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+  "type": "AdaptiveCard",
+  "version": "1.2",
+  "body": [
+    {
+      "type": "TextBlock",
+      "text": "🟢 SolarWinds Orion Alert - Node Up",
+      "weight": "Bolder",
+      "size": "Large",
+      "color": "@{if(equals(triggerBody()?['status'],'Down'),'Attention','Good')}"
+    },
+    {
+      "type": "TextBlock",
+      "text": "Alert triggered on monitored node - NODE UP!",
+      "isSubtle": true,
+      "spacing": "None"
+    },
+    {
+      "type": "FactSet",
+      "spacing": "Medium",
+      "facts": [
+        {
+          "title": "Node",
+          "value": "@{triggerBody()?['nodeName']}"
+        },
+        {
+          "title": "Status",
+          "value": "**@{triggerBody()?['status']}**"
+        },
+        {
+          "title": "IP Address",
+          "value": "@{triggerBody()?['ipAddress']}"
+        },
+        {
+          "title": "Alert Time",
+          "value": "@{triggerBody()?['alertTime']}"
+        },
+      {
+          "title": "View alerting Node",
+          "value": "@{triggerBody()?['NodeURL']}"
+        }
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "type": "Action.OpenUrl",
+      "title": "Open Orion",
+      "url": "https://orion.hvfcu.org"
+    }
+  ]
+}

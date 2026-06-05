@@ -12,7 +12,7 @@
     },
     {
       "type": "TextBlock",
-      "text": "Alert triggered on monitored node - NODE UP!",
+      "text": "Alert triggered on monitored node",
       "isSubtle": true,
       "spacing": "None"
     },
@@ -35,6 +35,10 @@
         {
           "title": "Alert Time",
           "value": "@{triggerBody()?['alertTime']}"
+        },
+            {
+          "title": "Last Boot Time",
+          "value": "@{triggerBody()?['lastboot']}"
         },
       {
           "title": "View alerting Node",

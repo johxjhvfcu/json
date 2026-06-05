@@ -5,14 +5,14 @@
   "body": [
     {
       "type": "TextBlock",
-      "text": "🚨 SolarWinds Orion Alert",
+      "text": "🚨 SolarWinds Orion Alert - Node Down",
       "weight": "Bolder",
       "size": "Large",
       "color": "@{if(equals(triggerBody()?['status'],'Down'),'Attention','Good')}"
     },
     {
       "type": "TextBlock",
-      "text": "Alert triggered on monitored node - NODE DOWN!",
+      "text": "Alert triggered on monitored node",
       "isSubtle": true,
       "spacing": "None"
     },

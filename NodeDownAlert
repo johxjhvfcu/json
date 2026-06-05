@@ -12,7 +12,7 @@
     },
     {
       "type": "TextBlock",
-      "text": "Alert triggered on monitored node",
+      "text": "Alert triggered on monitored node - NODE DOWN!",
       "isSubtle": true,
       "spacing": "None"
     },

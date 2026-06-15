@@ -60,3 +60,14 @@
     }
   ]
 }
+
+
+{
+  "nodeName": "${N=SwisEntity;M=Caption}",
+  "status": "${N=SwisEntity;M=Status}",
+  "alertTime": "${N=Alerting;M=AlertTriggerTime;F=yyyy-MM-dd HH:mm:ss}",
+  "ipAddress": "${N=SwisEntity;M=IP_Address}",
+  "NodeURL": "${N=Alerting;M=AlertDetailsUrl}",
+  "AlertName": "${N=Alerting;M=AlertName}",
+  "Ack":  "${N=Alerting;M=AcknowledgeUrl}"
+}

@@ -64,3 +64,15 @@
     }
   ]
 }
+
+
+{
+  "nodeName": "${N=SwisEntity;M=Node.Caption}",
+  "Port": "${N=SwisEntity;M=Caption}",
+  "status": "${N=SwisEntity;M=Status}",
+  "alertTime": "${N=Alerting;M=AlertTriggerTime;F=yyyy-MM-dd HH:mm:ss}",
+  "ipAddress": "${N=SwisEntity;M=IP_Address}",
+  "PortURL": "${N=Alerting;M=AlertDetailsUrl}",
+  "AlertName": "${N=Alerting;M=AlertName}",
+  "Ack":  "${N=Alerting;M=AcknowledgeUrl}"
+}

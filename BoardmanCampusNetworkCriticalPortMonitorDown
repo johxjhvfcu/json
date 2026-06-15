@@ -5,7 +5,7 @@
   "body": [
     {
       "type": "TextBlock",
-      "text": "🟢 Orion Alert triggered for Node: @{triggerBody()?['nodeName']} is Up!",
+      "text": "🚨 Alert Triggered: @{triggerBody()?['nodeName']} port @{triggerBody()?['Port']} is down!",
       "weight": "Bolder",
       "wrap": true,
       "size": "Large",
@@ -13,7 +13,7 @@
     },
     {
       "type": "TextBlock",
-      "text": "Alert triggered on monitored node",
+      "text": "Alert triggered on monitored port",
       "isSubtle": true,
       "spacing": "None"
     },
@@ -24,6 +24,10 @@
         {
           "title": "Node",
           "value": "@{triggerBody()?['nodeName']}"
+        },
+                {
+          "title": "Port",
+          "value": "@{triggerBody()?['Port']}"
         },
         {
           "title": "Status",
@@ -37,13 +41,13 @@
           "title": "Alert Time",
           "value": "@{triggerBody()?['alertTime']}"
         },
-            {
-          "title": "Last Boot Time",
-          "value": "@{triggerBody()?['lastboot']}"
+      {
+          "title": "View alerting Port",
+          "value": "@{triggerBody()?['PortURL']}"
         },
       {
-          "title": "View alerting Node",
-          "value": "@{triggerBody()?['NodeURL']}"
+          "title": "Click to Acknowledge",
+          "value": "@{triggerBody()?['Ack']}"
         },
      {
           "title": "Message Sent by Alert Named:",

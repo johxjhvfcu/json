@@ -5,8 +5,9 @@
   "body": [
     {
       "type": "TextBlock",
-      "text": "🚨 SolarWinds Orion Alert - Node Down",
+      "text": "🚨 Orion triggered for Node: @{triggerBody()?['nodeName']} is down!",
       "weight": "Bolder",
+      "wrap": true,
       "size": "Large",
       "color": "@{if(equals(triggerBody()?['status'],'Down'),'Attention','Good')}"
     },
@@ -43,6 +44,10 @@
       {
           "title": "Click to Acknowledge",
           "value": "@{triggerBody()?['Ack']}"
+        },
+     {
+          "title": "Message Sent by Alert Named:",
+          "value": "@{triggerBody()?['AlertName']}"
         }
       ]
     }

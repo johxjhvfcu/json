@@ -1,0 +1,52 @@
+{
+  "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+  "type": "AdaptiveCard",
+  "version": "1.2",
+  "body": [
+    {
+      "type": "TextBlock",
+      "text": "🟢 Alert Cleared: Stack Power Redundancy Regained on@{triggerBody()?['nodeName']}",
+      "weight": "Bolder",
+      "wrap": true,
+      "size": "Large",
+      "color": "Good"
+    },
+    {
+      "type": "TextBlock",
+      "text": "The switch stack @{triggerBody()?['nodeName']} has regained power redundancy.",
+      "wrap": true,
+      "weight": "Bolder",
+      "spacing": "None",
+      "color": "Good"
+    },
+    {
+      "type": "FactSet",
+      "spacing": "Medium",
+      "facts": [
+        {
+          "title": "Node",
+          "value": "@{triggerBody()?['nodeName']}"
+        },
+        {
+          "title": "Alert Time",
+          "value": "@{triggerBody()?['alertTime']}"
+        },
+      {
+          "title": "View alerting Node",
+          "value": "@{triggerBody()?['NodeURL']}"
+        },
+     {
+          "title": "Message Sent by Alert Named:",
+          "value": "@{triggerBody()?['AlertName']}"
+        }
+      ]
+    }
+
+
+    
+ {
+"nodeName": "${NodeName}",
+"alertTime": "${N=Alerting;M=AlertTriggerTime;F=yyyy-MM-dd HH:mm:ss}",
+"NodeURL": "${N=Alerting;M=AlertDetailsUrl}",
+"AlertName": "${N=Alerting;M=AlertName}"
+}

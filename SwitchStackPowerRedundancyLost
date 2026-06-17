@@ -1,0 +1,57 @@
+{
+  "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+  "type": "AdaptiveCard",
+  "version": "1.2",
+  "body": [
+    {
+      "type": "TextBlock",
+      "text": "🚨Alert Triggered: Stack Power Redundancy Lost on @{triggerBody()?['nodeName']}",
+      "weight": "Bolder",
+      "wrap": true,
+      "size": "Large",
+      "color": "Attention"
+    },
+    {
+      "type": "TextBlock",
+      "text": "The switch stack @{triggerBody()?['nodeName']} has lost power redundancy.  The stack is up, but power is no longer being supplied in a redundant manner. This may be an indication that a power supply has failed or the power stack is no longer properly sharing power.",
+      "wrap": true,
+      "weight": "Bolder",
+      "spacing": "None",
+      "color": "Warning"
+    },
+    {
+      "type": "FactSet",
+      "spacing": "Medium",
+      "facts": [
+        {
+          "title": "Node",
+          "value": "@{triggerBody()?['nodeName']}"
+        },
+        {
+          "title": "Alert Time",
+          "value": "@{triggerBody()?['alertTime']}"
+        },
+      {
+          "title": "View alerting Node",
+          "value": "@{triggerBody()?['NodeURL']}"
+        },
+      {
+          "title": "Click to Acknowledge",
+          "value": "@{triggerBody()?['Ack']}"
+        },
+     {
+          "title": "Message Sent by Alert Named:",
+          "value": "@{triggerBody()?['AlertName']}"
+        }
+      ]
+    }
+
+
+    
+ {
+"nodeName": "${NodeName}",
+"alertTime": "${N=Alerting;M=AlertTriggerTime;F=yyyy-MM-dd HH:mm:ss}",
+"NodeURL": "${N=Alerting;M=AlertDetailsUrl}",
+"Ack":  "${N=Alerting;M=AcknowledgeUrl}"
+"AlertName": "${N=Alerting;M=AlertName}"
+}
